@@ -1,0 +1,45 @@
+CREATE TABLE X(
+idX INT PRIMARY KEY,
+nameX VARCHAR(50)
+);
+
+CREATE TABLE Y(
+idY INT,
+nameY VARCHAR(50)
+);
+
+INSERT INTO X(idX,nameX) 
+VALUES
+(1,'X1'),
+(2,'X2'),
+(3,'X3');
+
+INSERT INTO Y(idY,nameY) 
+VALUES
+(1,'Y1'),
+(2,'Y2'),
+(4,'Y4'),
+(5,'Y5'),
+(6,'Y6');
+
+-- INNER JOIN --
+SELECT nameX, nameY
+FROM X
+INNER JOIN Y ON X.idX = Y.idY;
+
+-- FULL OUTER JOIN --
+SELECT nameX, nameY
+FROM X
+FULL OUTER JOIN Y ON X.idX = Y.idY;
+
+-- RIGHT JOIN --
+SELECT nameX, nameY
+FROM X
+RIGHT JOIN Y ON X.idX = Y.idY;
+
+-- LEFT JOIN --
+SELECT nameX, nameY
+FROM X
+LEFT JOIN Y ON X.idX = Y.idY
+--
+DROP TABLE Y
